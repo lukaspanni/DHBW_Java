@@ -5,6 +5,7 @@ import java.util.TreeSet;
 
 public class Lottery {
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		TreeSet s = new TreeSet();
 		Random r = new Random();

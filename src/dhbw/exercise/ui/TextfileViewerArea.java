@@ -31,10 +31,8 @@ public class TextfileViewerArea extends JFrame {
 				line = br.readLine();
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.setSize(400, 400);
