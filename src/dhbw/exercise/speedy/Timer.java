@@ -23,15 +23,16 @@ public class Timer implements Runnable {
 
 		while (!terminated) {
 			try {
-				game.update(countdown);
-				Thread.sleep(1000);
+				if (countdown > 0) {
+					game.update(countdown);
+					Thread.sleep(1000);
+				} else {
+					game.timeOver();
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			countdown--;
-			if (countdown == 0) {
-				game.timeOver();
-			}
 		}
 
 	}

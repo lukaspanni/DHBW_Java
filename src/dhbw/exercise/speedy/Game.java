@@ -72,6 +72,7 @@ public class Game {
 			currentQuestionIndex++;
 			for (GameClient gameClient : clients) {
 				gameClient.setQuestion(currentQuestionIndex, selectedQuestions.get(currentQuestionIndex));
+				gameClient.setRemainingSeconds(10);
 			}
 			startTimer();
 		} else {
@@ -79,8 +80,7 @@ public class Game {
 					+ " seconds, score: ";
 			for (GameClient gameClient : clients) {
 				gameClient.gameIsOver();
-				message += gameClient.getPlayerName() + " (" + gameClient.getPoints() + ")";
-
+				message += gameClient.getPlayerName() + " (" + gameClient.getPoints() + ")\n";
 			}
 			JOptionPane.showMessageDialog(null, message);
 			writeHighscore(message);
