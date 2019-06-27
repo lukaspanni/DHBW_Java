@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
+@SuppressWarnings({ "unchecked","rawtypes"})
 
 public class Library {
 
@@ -62,7 +63,6 @@ public class Library {
 		}
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public String sort(SortCategories sc) {
 		ArrayList a = new ArrayList(books);
 		a.sort(new Comparator() {

@@ -13,6 +13,7 @@ public class Soccer {
 
 		try {
 			List<Player> players = Files.readAllLines(p).stream().map(Player::parse).collect(Collectors.toList());
+			System.out.println(players);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

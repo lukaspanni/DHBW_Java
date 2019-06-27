@@ -5,9 +5,9 @@ import java.util.List;
 
 public class SearchEngine {
 
-	private static String[] urls = new String[] { "http://www.kit.edu", "http://www.google.com",
-			"http://moodle.dhbw.de/", "http://www.sueddeutsche.de", "http://www.faz.de", "https://www.spiegel.de",
-			"http://www.iai.kit.edu", "https://www.tagesschau.de" };
+	private static String[] urls = new String[] { "https://www.kit.edu", "https://www.google.com",
+			"https://moodle.dhbw.de/", "https://www.sueddeutsche.de", "https://www.spiegel.de",
+			"https://www.twitter.com", "https://www.tagesschau.de" };
 
 	public static void main(String[] args) {
 		List<PageLoader> pageLoaders = new ArrayList<>();

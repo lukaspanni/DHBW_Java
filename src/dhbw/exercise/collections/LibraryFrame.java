@@ -18,6 +18,10 @@ import dhbw.exercise.collections.Library.SortCategories;
 
 public class LibraryFrame extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1905193893424753100L;
 	private Library library = new Library();
 	private String path = "lib.txt";
 	private JButton saveBtn;
