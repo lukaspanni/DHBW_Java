@@ -55,7 +55,7 @@ public class GameTerm extends JFrame implements GameClient, ActionListener {
 	@Override
 	public void setAnswerState(int questionIndex, Status status) {
 		this.labels[questionIndex].updateStatus(status);
-		this.points += status.points;
+		this.points += status.getPoints();
 
 	}
 

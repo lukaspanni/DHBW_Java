@@ -12,12 +12,12 @@ public class QuestionNumberLabel extends JLabel {
 		super(text);
 		this.setHorizontalAlignment(JLabel.CENTER);
 		this.setOpaque(true);
-		this.setBackground(questionStatus.color);
+		this.setBackground(questionStatus.getColor());
 	}
 
 	public void updateStatus(Status status) {
 		this.questionStatus = status;
-		this.setBackground(questionStatus.color);
+		this.setBackground(questionStatus.getColor());
 		System.out.println(status);
 	}
 

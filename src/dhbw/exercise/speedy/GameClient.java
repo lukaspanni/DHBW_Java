@@ -20,8 +20,16 @@ public interface GameClient {
 		ACTIVE(0, Color.ORANGE), CORRECT(1, Color.GREEN), WRONG(-1, Color.RED), PENDING(0, Color.WHITE),
 		NO_ANSWER(0, Color.GRAY);
 
-		public int points;
-		public Color color;
+		private int points;
+		private Color color;
+
+		public int getPoints() {
+			return points;
+		}
+
+		public Color getColor() {
+			return color;
+		}
 
 		Status(int points, Color color) {
 			this.points = points;
