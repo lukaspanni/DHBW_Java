@@ -29,7 +29,7 @@ class MyBuffer {
 			}
 		}
 		if (this.values.size() >= 1) {
-			v = this.values.removeLast();
+			v = this.values.removeFirst();
 			this.notify();
 		}
 		System.out.println("Get:" + v);
