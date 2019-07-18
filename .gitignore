@@ -1,4 +1,6 @@
 .settings
 /bin/
+/src/dhbw/probeklausur2
 .project
 .classpath
+*.jar
