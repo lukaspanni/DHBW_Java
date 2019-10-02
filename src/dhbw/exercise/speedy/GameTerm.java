@@ -28,7 +28,7 @@ public class GameTerm extends JFrame implements GameClient, ActionListener {
 
 	@Override
 	public int getPoints() {
-		return points < 0 ? 0 : points;
+		return this.points < 0 ? 0 : this.points;
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class GameTerm extends JFrame implements GameClient, ActionListener {
 		this.questionText.setText(q.getQuestionText());
 		this.labels[questionIndex].updateStatus(Status.ACTIVE);
 		for (int i = 0; i < q.getAnswers().length; i++) {
-			answerButtons[i].setText(q.getAnswers()[i]);
+			this.answerButtons[i].setText(q.getAnswers()[i]);
 		}
 	}
 
@@ -47,7 +47,7 @@ public class GameTerm extends JFrame implements GameClient, ActionListener {
 
 	@Override
 	public void gameIsOver() {
-		for (JButton btn : answerButtons) {
+		for (JButton btn : this.answerButtons) {
 			btn.setEnabled(false);
 		}
 	}
@@ -62,37 +62,38 @@ public class GameTerm extends JFrame implements GameClient, ActionListener {
 	public GameTerm(String name, Game game) {
 		this.game = game;
 		this.name = name;
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setTitle(this.name);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setTitle(this.name);
 		this.setSize(400, 400);
 
-		this.setLayout(new BorderLayout());
+		setLayout(new BorderLayout());
 		JPanel top = new JPanel(new BorderLayout());
 		JPanel toptop = new JPanel();
-		labels = new QuestionNumberLabel[this.game.getQuestionsCount()];
-		for (int i = 0; i < labels.length; i++) {
-			labels[i] = new QuestionNumberLabel(String.valueOf(i));
-			toptop.add(labels[i]);
+		this.labels = new QuestionNumberLabel[this.game.getQuestionsCount()];
+		for (int i = 0; i < this.labels.length; i++) {
+			this.labels[i] = new QuestionNumberLabel(String.valueOf(i));
+			toptop.add(this.labels[i]);
 		}
 		top.add(toptop, BorderLayout.NORTH);
 		JPanel mid = new JPanel(new GridLayout(2, 1));
-		questionText = new JLabel();
-		remainingTime = new JLabel();
-		mid.add(questionText);
-		mid.add(remainingTime);
+		this.questionText = new JLabel();
+		this.remainingTime = new JLabel();
+		mid.add(this.questionText);
+		mid.add(this.remainingTime);
 		top.add(mid, BorderLayout.SOUTH);
 		this.add(top, BorderLayout.NORTH);
 
 		JPanel bot = new JPanel(new GridLayout(2, 2));
-		for (int i = 0; i < answerButtons.length; i++) {
-			answerButtons[i] = new JButton();
-			answerButtons[i].setActionCommand(String.valueOf(i));
-			answerButtons[i].addActionListener(this);
-			bot.add(answerButtons[i]);
+		for (int i = 0; i < this.answerButtons.length; i++) {
+			this.answerButtons[i] = new JButton();
+			this.answerButtons[i].setActionCommand(String.valueOf(i));
+			this.answerButtons[i].addActionListener(this);
+			bot.add(this.answerButtons[i]);
 		}
 		this.add(bot, BorderLayout.CENTER);
-		this.setVisible(true);
+		setVisible(true);
 	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
