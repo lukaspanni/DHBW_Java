@@ -12,7 +12,6 @@ import java.util.TreeSet;
 @SuppressWarnings({ "rawtypes", "unchecked" })
 public class Datastructures {
 
-
 	public static void CollectionMethods() {
 		// important Collection Methods
 		Collection c = new ArrayList<Integer>();
@@ -61,6 +60,9 @@ public class Datastructures {
 		m.values(); // collection of all values
 		for (Object key : m.keySet()) {
 			m.get(key);
+		}
+		for (Object value : m.values()) {
+
 		}
 	}
 
